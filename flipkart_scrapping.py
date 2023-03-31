@@ -15,6 +15,8 @@ item_link='https://www.flipkart.com'+box.div.div.div.a["href"] # item which we w
 product=requests.get(item_link)
 product.encoding='utf-8'
 product_html = bs(product.text, "html.parser")
+print('product name = ',product_html.find('span',{'class':"B_NuCI"}).text)
+print('price = ',product_html.find('div',{'class':'_30jeq3 _16Jk6d'}).text)
 ratingbox=product_html.find_all('div',{'class':"_3LWZlK _1BLPMq"})
 
 ratings=[]
